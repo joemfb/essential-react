@@ -2,11 +2,35 @@
 <html>
 <head>
   <title>Essential React Template</title>
+  <link rel="stylesheet" href="/bootstrap.css" charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" charset="utf-8">
   <link rel="stylesheet" href="/style.css" charset="utf-8">
+  <style>
+    .highlight {
+      background-color: #5bc0de;
+      color: #eee;
+      font-weight: 700;
+      padding: 0 2px 2px;
+      margin: 0;
+    }
+    .facet-value .action {
+      cursor: hand;
+      cursor: pointer;
+      visibility: hidden;
+    }
+    .facet-value:hover .action {
+      visibility: visible !important;
+    }
+    .search-input .loading {
+      border: none;
+      background: transparent;
+    }
+  </style>
 </head>
 <body>
-  <div id="app"></div>
-
-  <script src="/app.js"></script>
+  <div class="content">
+    <div id="app" class="container"></div>
+  </div>
 </body>
+<script src="/app.js"></script>
 </html>

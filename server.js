@@ -11,6 +11,14 @@ const app = express();
  *
  ************************************************************/
 
+app.use(express.static(__dirname + '/build'));
+
+app.use('/v1', require('./proxy')({
+  prefix: '/v1',
+  port: '8022',
+  auth: 'admin:admin'
+}));
+
 // Serve application file depending on environment
 app.get('/app.js', (req, res) => {
   if (process.env.PRODUCTION) {
@@ -67,7 +75,7 @@ if (!process.env.PRODUCTION) {
  *
  *****************/
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8090;
 const server = app.listen(port, () => {
   const host = server.address().address;
   const port = server.address().port;

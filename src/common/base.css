@@ -15,12 +15,13 @@ h1 {
 }
 
 :global(#container) {
+  padding-top: 50px;
   width: 100%;
 
-  @media (min-width: 960px) {
+  /*@media (min-width: 960px) {
     width: 960px;
     margin: 0 auto;
-  }
+  }*/
 
   :global(#navigation) {
     padding: 10px 15px;
